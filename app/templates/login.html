@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Signup{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Login</h3>
+        </div>
+        <div class="card-body">
+            <form action="{{ url_for('routes.login') }}" method="post">
+                <input class="form-control" type="text" name="username" id="username" placeholder="username">
+                <br>
+                <input class="form-control" type="password" name="password" id="password" placeholder="password">
+                <br>
+                <input class="btn btn-primary" type="submit" value="login">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

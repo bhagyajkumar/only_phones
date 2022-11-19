@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Signup{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Edit profile</h3>
+        </div>
+        <div class="card-body">
+            <form action="{{ url_for('routes.edit_profile') }}" method="post">
+                <input type="text" name="username" id="username" class="form-control" value="{{ current_user.username }}"/><br />
+                <input type="text" name="number" id="number" class="form-control" value="{{ current_user.phone_number }}"/><br />
+                <input type="submit" value="save" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
